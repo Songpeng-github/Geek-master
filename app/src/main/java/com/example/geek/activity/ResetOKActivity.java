@@ -1,7 +1,6 @@
 package com.example.geek.activity;
 
 
-
 import android.content.Intent;
 
 
@@ -19,8 +18,8 @@ import butterknife.OnClick;
  * name:&{宋佳羿}
  * date:2019/11/19
  * Time:11:21
- *
- *           重新设置密码成功界面
+ * <p>
+ * 重新设置密码成功界面
  */
 
 public class ResetOKActivity extends BaseActivity<ResetOKView, ResetOKPeresenter> implements BaseView {
@@ -36,9 +35,9 @@ public class ResetOKActivity extends BaseActivity<ResetOKView, ResetOKPeresenter
         return R.layout.activity_reset;
     }
 
-     @OnClick(R.id.btn)
-    public  void  Click(){
-        startActivity(new Intent(ResetOKActivity.this,LoginActivity.class));
-     }
+    @OnClick(R.id.btn)
+    public void Click() {
+        startActivity(new Intent(ResetOKActivity.this, LoginActivity.class));
+    }
 
 }

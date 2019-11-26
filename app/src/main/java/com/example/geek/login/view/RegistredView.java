@@ -8,6 +8,8 @@ import com.example.geek.login.bean.RegisterBean;
  * date:2019/11/19
  * Time:15:14
  */
+
 public interface RegistredView extends BaseView {
     void  showRegister(RegisterBean registerBean);
+
 }

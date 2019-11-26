@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Geek</string>
+    <string name="home">首页</string>
+    <string name="zhishi">分类</string>
+    <string name="fenlei">分类</string>
+    <string name="guanzhu">关注</string>
+    <string name="wode">我的</string>
 </resources>

@@ -15,20 +15,22 @@ import com.example.geek.login.bean.LoginBean;
 import com.example.geek.login.bean.loginJson;
 import com.example.geek.login.peresenter.LoginPeresenter;
 import com.example.geek.login.view.LoginView;
+import com.example.geek.utils.IntentUtils;
 import com.example.geek.utils.ToastUtil;
 import com.google.gson.Gson;
 
 import butterknife.BindView;
 
 import butterknife.OnClick;
+
 /**
  * name:&{宋佳羿}
  * date:2019/11/19
  * Time:8:56
- *
- *                登录界面
+ * <p>
+ * 登录界面
  */
-public class LoginActivity extends BaseActivity<LoginView, LoginPeresenter> implements  LoginView{
+public class LoginActivity extends BaseActivity<LoginView, LoginPeresenter> implements LoginView {
     private static final String TAG = "LoginActivity";
     @BindView(R.id.btn_next)
     ImageView next;
@@ -43,10 +45,9 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPeresenter> impl
     @BindView(R.id.pass)
     EditText password;
     @BindView(R.id.forget)
-    TextView  forget;
+    TextView forget;
     @BindView(R.id.path)
     ImageView path;
-
 
 
     @Override
@@ -60,40 +61,39 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPeresenter> impl
     }
 
     //点击事件
-    @OnClick({R.id.btn_next,R.id.registered,R.id.weibo,R.id.qq,R.id.forget,R.id.path})
-    public void  onClick(View view){
-         switch (view.getId()){
-             case R.id.btn_next:
-                 Log.d(TAG, "onClick: "+new Gson().toJson(new loginJson(number.getText().toString(),password.getText().toString())));
-                 mPresenter.login(number.getText().toString(),password.getText().toString(),new Gson().toJson(new loginJson(number.getText().toString(),password.getText().toString())));
-                 break;
-                 //跳转注册界面
-             case R.id.registered:
-                 startActivity(new Intent(LoginActivity.this, RegisteredActivity.class));
-                 break;
-             case R.id.weibo:
+    @OnClick({R.id.btn_next, R.id.registered, R.id.weibo, R.id.qq, R.id.forget, R.id.path})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_next:
+                Log.d(TAG, "onClick: " + new Gson().toJson(new loginJson(number.getText().toString(), password.getText().toString())));
+                mPresenter.login(number.getText().toString(), password.getText().toString(), new Gson().toJson(new loginJson(number.getText().toString(), password.getText().toString())));
+                break;
+            //跳转注册界面
+            case R.id.registered:
+                IntentUtils.getInstence().intent(LoginActivity.this, RegisteredActivity.class);
+                break;
+            case R.id.weibo:
 
+                break;
+            case R.id.qq:
 
-                 break;
-             case  R.id.qq:
+                break;
+            //   跳转 忘记密码界面
+            case R.id.forget:
+                IntentUtils.getInstence().intent(LoginActivity.this, ForgetpasswordActivity.class);
 
-                 break;
-                 //   跳转 忘记密码界面
-             case R.id.forget:
-                 startActivity(new Intent(LoginActivity.this, ForgetpasswordActivity.class));
-                 break;
-         }
+                break;
+        }
     }
 
 
     @Override
     public void showLoginbean(LoginBean msg) {
-        if(msg.getCode()==1){
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-        }else {
+        if (msg.getCode() == 1) {
+            IntentUtils.getInstence().intent(LoginActivity.this, MainActivity.class);
+        } else {
             ToastUtil.showLong("您输入的账号或密码有误");
         }
-
 
     }
 }

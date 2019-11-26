@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+        <solid android:color="#ffffffff" />
+        <item name="android:shadowDx"
+            tools:ignore="MissingPrefix">0</item>
+        <item name="android:shadowDy"
+            tools:ignore="MissingPrefix">2</item>
+        <item name="android:shadowColor"
+            tools:ignore="MissingPrefix">#40000000</item>
+        <corners android:topLeftRadius="5dp" android:topRightRadius="5dp" android:bottomLeftRadius="5dp" android:bottomRightRadius="5dp" />
+    </shape>

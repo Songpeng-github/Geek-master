@@ -38,7 +38,7 @@
                 android:layout_height="@dimen/qb_px_60">
 
                 <EditText
-                    android:id="@+id/name"
+                    android:id="@+id/p_name"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/qb_px_60"
                     android:hint="设置昵称"
@@ -61,7 +61,7 @@
                 android:layout_marginTop="@dimen/qb_px_20">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/p_password"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/qb_px_60"
                     android:hint="输入密码"
@@ -82,7 +82,7 @@
                 android:layout_marginTop="@dimen/qb_px_20">
 
                 <EditText
-                    android:id="@+id/confirmpassword"
+                    android:id="@+id/p_confirmpassword"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/qb_px_60"
                     android:hint="输入密码"

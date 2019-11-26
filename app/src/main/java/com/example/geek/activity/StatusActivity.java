@@ -21,16 +21,15 @@ import butterknife.OnClick;
  * name:&{宋佳羿}
  * date:2019/11/19
  * Time:14:19
- *
- *           注册  选择身份界面
+ * <p>
+ * 注册  选择身份界面
  */
 
 
-
 public class StatusActivity extends BaseActivity<StatusView, StatusPeresenter> implements BaseView {
-@BindView(R.id.city)
+    @BindView(R.id.city)
     ImageView city;
-@BindView(R.id.people)
+    @BindView(R.id.people)
     ImageView people;
     private String phone;
 
@@ -50,19 +49,19 @@ public class StatusActivity extends BaseActivity<StatusView, StatusPeresenter> i
         phone = getIntent().getStringExtra("phone");
     }
 
-    @OnClick({R.id.city,R.id.people})
-    public  void  onClick(View view){
-          switch (view.getId()){
-              case R.id.city:
-                  Intent intent = new Intent(StatusActivity.this, EnterpriseActivity.class);
-                 intent.putExtra("phoneone",phone);
-                 startActivity(intent);
-                  break;
-              case  R.id.people:
-                  Intent intenttwo = new Intent(StatusActivity.this, PersonalActivity.class);
-                  intenttwo.putExtra("phonetwo",phone);
-                  startActivity(intenttwo);
-                  break;
-          }
+    @OnClick({R.id.city, R.id.people})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.city:
+                Intent intent = new Intent(StatusActivity.this, EnterpriseActivity.class);
+                intent.putExtra("phoneone", phone);
+                startActivity(intent);
+                break;
+            case R.id.people:
+                Intent intenttwo = new Intent(StatusActivity.this, PersonalActivity.class);
+                intenttwo.putExtra("phonetwo", phone);
+                startActivity(intenttwo);
+                break;
+        }
     }
 }

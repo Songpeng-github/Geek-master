@@ -14,6 +14,7 @@ import com.example.geek.login.bean.RegisterBean;
 import com.example.geek.login.bean.RegisterJson;
 import com.example.geek.login.peresenter.RegistredPeresener;
 import com.example.geek.login.view.RegistredView;
+import com.example.geek.utils.IntentUtils;
 import com.example.geek.utils.ToastUtil;
 import com.google.gson.Gson;
 
@@ -57,12 +58,13 @@ public class EnterpriseActivity extends BaseActivity<RegistredView, RegistredPer
     @Override
     protected void initData() {
         phone = getIntent().getStringExtra("phoneone");
-        Log.d(TAG, "initData: "+phone);
+        Log.d(TAG, "initData: " + phone);
     }
 
     @OnClick(R.id.enext)
     public void onClick() {
-//isEmpty 为空   equals 相等
+//isEmpty 为空
+// equals 相等
         if (TextUtils.isEmpty(name.getText().toString()) || TextUtils.isEmpty(password.getText().toString()) || TextUtils.isEmpty(confirmpassword.getText().toString()) || TextUtils.isEmpty(enterprise.getText().toString())) {
             ToastUtil.showLong("请填入详细信息");
         } else {
@@ -71,8 +73,8 @@ public class EnterpriseActivity extends BaseActivity<RegistredView, RegistredPer
                         new Gson().toJson(new RegisterJson(phone, password.getText().toString(), 2, name.getText().toString(), "", enterprise.getText().toString(), "", "", "")));
 
                 if (re.getMsg().equals("success")) {
-                    startActivity(new Intent(EnterpriseActivity.this, SuccessActivity.class));
-                }else {
+                    IntentUtils.getInstence().intent(EnterpriseActivity.this, SuccessActivity.class);
+                } else {
                     ToastUtil.showLong("账号已存在");
                 }
             } else {
@@ -81,11 +83,9 @@ public class EnterpriseActivity extends BaseActivity<RegistredView, RegistredPer
         }
     }
 
-
     @Override
     public void showRegister(RegisterBean registerBean) {
         Log.d(TAG, "showRegister: " + registerBean.toString());
-
         re = registerBean;
     }
 }

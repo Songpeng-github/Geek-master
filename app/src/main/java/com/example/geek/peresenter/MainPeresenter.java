@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.geek.base.BasePeresenter;
 import com.example.geek.bean.BannerBean;
+import com.example.geek.bean.Beanone;
 import com.example.geek.bean.FirstBean;
 import com.example.geek.model.MianModel;
 import com.example.geek.network.ResultCallBack;
@@ -17,17 +18,29 @@ import com.example.geek.view.MainView;
 public class MainPeresenter extends BasePeresenter<MainView> implements ResultCallBack {
 
 
-
     private static final String TAG = "MainPeresenter";
     private MianModel mianModel;
 
 
-    public void  Banner(String json){
-        mianModel.banner(json,this);
+    public void  Banner(){
+        mianModel.banner(this);
     }
+      public  void  firsttext(){
+        mianModel.firsttext(new ResultCallBack() {
+            @Override
+            public void onSuccess(Object bean) {
+                view.showFirsttest((Beanone) bean);
+            }
 
-    public  void  First(String json){
-        mianModel.First(json, new ResultCallBack() {
+            @Override
+            public void onFail(String msg) {
+
+            }
+        });
+      }
+
+    public  void  First(){
+        mianModel.First(new ResultCallBack() {
             @Override
             public void onSuccess(Object bean) {
                 view.showFirst((FirstBean) bean);
@@ -39,20 +52,15 @@ public class MainPeresenter extends BasePeresenter<MainView> implements ResultCa
             }
         });
     }
-
     @Override
     protected void initModel() {
         mianModel = new MianModel();
         models.add(mianModel);
-
-
     }
-
     @Override
     public void onSuccess(Object bean) {
         view.showBanner((BannerBean) bean);
     }
-
     @Override
     public void onFail(String msg) {
         Log.d(TAG, "onFail: "+msg);

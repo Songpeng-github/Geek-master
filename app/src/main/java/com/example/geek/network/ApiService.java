@@ -4,6 +4,8 @@ package com.example.geek.network;
 
 import com.example.geek.bean.BannerBean;
 import com.example.geek.bean.BasicSettingBean;
+import com.example.geek.bean.Beanone;
+import com.example.geek.bean.Beantwo;
 import com.example.geek.bean.CooperativeInstitutionsBean;
 import com.example.geek.bean.FirstBean;
 import com.example.geek.bean.IndexAreasBean;
@@ -22,6 +24,7 @@ import io.reactivex.Observable;
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
 
+import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
@@ -67,7 +70,7 @@ public interface ApiService {
         //首页banner轮播图 ，查询正在拍卖列表,查询即将拍卖的列表,一级经营范围,二级经营范围
         @POST("auctionQueryBanners")
         @Headers("Content-Type:application/json")
-         Observable<BannerBean>   HomeBanner(@Body RequestBody body);
+         Observable<BannerBean>   HomeBanner();
 
        @POST("queryProceedAuction")
        @Headers("Content-Type:application/json")
@@ -77,15 +80,30 @@ public interface ApiService {
        @Headers("Content-Type:application/json")
        Observable<NoticeAuctionBean>     getHotice(@Body RequestBody body);
 
+
        @POST("queryFirstEnteritem")
        @Headers("Content-Type:application/json")
-       Observable<FirstBean>  getFirst(@Body RequestBody body);
+       Observable<FirstBean>  getFirst();
 
 
-           //  一级经营范围code 传值到二级范围
-         @POST("querTwoEnteritem")
-        @Headers("Content-Type:application/json")
-         Observable<TwoBean>  getTwo(@Body RequestBody body);
+        //一级经营范围code 传值到二级范围
+       @POST("querTwoEnteritem")
+       @Headers("Content-Type:application/json")
+       Observable<TwoBean>  getTwo();
+
+
+
+
+       //测试接口 一级  https://www.quepai.cn/user/static/weChartImage/firstPage/json.txt
+            @GET("user/static/weChartImage/firstPage/json.txt")
+            Observable<Beanone>  getfirsttext();
+
+
+       //https://www.quepai.cn/user/static/weChartImage/typePage/json.txt  二级测试接口
+        @GET("user/static/weChartImage/typePage/json.txt")
+        Observable<Beantwo>  getBeantwo();
+
+
 
 
 

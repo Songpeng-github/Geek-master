@@ -22,13 +22,13 @@ import butterknife.OnClick;
  * name:&{宋佳羿}
  * date:2019/11/19
  * Time:13:44
- *
- *              注册成功界面
+ * <p>
+ * 注册成功界面
  */
 public class SuccessActivity extends BaseActivity<SuccssView, SuccessPeresenter> implements BaseView {
 
-  @BindView(R.id.sbtn)
-  Button sbtn;
+    @BindView(R.id.sbtn)
+    Button sbtn;
 
     @Override
     protected SuccessPeresenter initPeresenter() {
@@ -41,8 +41,8 @@ public class SuccessActivity extends BaseActivity<SuccssView, SuccessPeresenter>
     }
 
     @OnClick(R.id.sbtn)
-    public  void  Click(){
-        startActivity(new Intent(SuccessActivity.this,LoginActivity.class));
+    public void Click() {
+        startActivity(new Intent(SuccessActivity.this, LoginActivity.class));
     }
 
 }

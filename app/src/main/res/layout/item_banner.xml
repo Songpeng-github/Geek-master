@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
+    <com.youth.banner.Banner
         android:src="@mipmap/ic_launcher"
         android:layout_margin="@dimen/qb_px_10"
         android:layout_gravity="center"

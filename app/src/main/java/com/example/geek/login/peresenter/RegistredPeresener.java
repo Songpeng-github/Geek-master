@@ -24,6 +24,10 @@ public class RegistredPeresener extends BasePeresenter<RegistredView> implements
             registredModel.Registred(json,this);
       }
 
+
+
+
+
        //个人信息
       public  void  Registre2(String name,String pass,String password,String json){
         if(TextUtils.isEmpty(name)||TextUtils.isEmpty(pass)||TextUtils.isEmpty(password)){

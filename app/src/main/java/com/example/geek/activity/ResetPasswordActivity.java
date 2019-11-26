@@ -24,17 +24,17 @@ import butterknife.OnClick;
  * name:&{宋佳羿}
  * date:2019/11/19
  * Time:10:12
- *
- *                重置密码界面
+ * <p>
+ * 重置密码界面
  */
 
 public class ResetPasswordActivity extends BaseActivity<ResetView, ResetPeresenter> implements ResetView {
     @BindView(R.id.btn_next)
     ImageView btn_next;
     @BindView(R.id.password)
-     EditText password;
+    EditText password;
     @BindView(R.id.confirmpassword)
-     EditText confirm;
+    EditText confirm;
 
 
     @Override
@@ -47,21 +47,21 @@ public class ResetPasswordActivity extends BaseActivity<ResetView, ResetPeresent
         return R.layout.activity_resetpassword;
     }
 
-    @OnClick({R.id.btn_next,R.id.password,R.id.confirmpassword})
-    public  void  onClick(View view){
-        switch (view.getId()){
+    @OnClick({R.id.btn_next, R.id.password, R.id.confirmpassword})
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.btn_next:
 
-           if(TextUtils.isEmpty(password.getText().toString())||TextUtils.isEmpty(confirm.getText().toString())){
-               ToastUtil.showLong("密码不能为空");
-           }else {
-               if(password.getText().toString().equals(confirm.getText().toString())){
-                   ToastUtil.showLong("密码不一致，请重新输入");
-               }else {
-                   mPresenter.Reset(password.getText().toString().trim(),confirm.getText().toString().trim(),new Gson().toJson(new ResetJson(password.getText().toString(),confirm.getText().toString())));
-                   startActivity(new Intent(ResetPasswordActivity.this,ResetOKActivity.class));
-               }
-           }
+                if (TextUtils.isEmpty(password.getText().toString()) || TextUtils.isEmpty(confirm.getText().toString())) {
+                    ToastUtil.showLong("密码不能为空");
+                } else {
+                    if (password.getText().toString().equals(confirm.getText().toString())) {
+                        ToastUtil.showLong("密码不一致，请重新输入");
+                    } else {
+                        mPresenter.Reset(password.getText().toString().trim(), confirm.getText().toString().trim(), new Gson().toJson(new ResetJson(password.getText().toString(), confirm.getText().toString())));
+                        startActivity(new Intent(ResetPasswordActivity.this, ResetOKActivity.class));
+                    }
+                }
 
                 break;
             case R.id.password:
@@ -76,7 +76,7 @@ public class ResetPasswordActivity extends BaseActivity<ResetView, ResetPeresent
 
     @Override
     public void showResetBean(ResetBean resetBean) {
-        ToastUtil.showLong("-------------ResetBean-------------------"+resetBean);
+        ToastUtil.showLong("-------------ResetBean-------------------" + resetBean);
 
     }
 }
