@@ -76,6 +76,5 @@ public class ForgetModel  extends BaseModel {
                         callBack.onSuccess(bean);
                     }
                 });
-
     }
 }

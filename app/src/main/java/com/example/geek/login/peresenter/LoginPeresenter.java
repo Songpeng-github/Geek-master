@@ -2,6 +2,7 @@ package com.example.geek.login.peresenter;
 import android.text.TextUtils;
 import com.example.geek.base.BasePeresenter;
 import com.example.geek.login.bean.LoginBean;
+import com.example.geek.login.bean.QQBean;
 import com.example.geek.login.model.LoginModel;
 import com.example.geek.login.view.LoginView;
 import com.example.geek.network.ResultCallBack;
@@ -28,9 +29,22 @@ public class LoginPeresenter extends BasePeresenter<LoginView> implements Result
             return;
         } else {
             loginModel.login(json,this);
-
         }
     }
+
+     public  void  getQQ(){
+        loginModel.QQ(new ResultCallBack() {
+            @Override
+            public void onSuccess(Object bean) {
+                view.showQQ((QQBean) bean);
+            }
+
+            @Override
+            public void onFail(String msg) {
+
+            }
+        });
+     }
 
 
     @Override

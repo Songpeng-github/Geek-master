@@ -71,12 +71,6 @@ public class EnterpriseActivity extends BaseActivity<RegistredView, RegistredPer
             if (password.getText().toString().equals(confirmpassword.getText().toString())) {
                 mPresenter.Registre(name.getText().toString(), enterprise.getText().toString(), password.getText().toString(), confirmpassword.getText().toString(),
                         new Gson().toJson(new RegisterJson(phone, password.getText().toString(), 2, name.getText().toString(), "", enterprise.getText().toString(), "", "", "")));
-
-                if (re.getMsg().equals("success")) {
-                    IntentUtils.getInstence().intent(EnterpriseActivity.this, SuccessActivity.class);
-                } else {
-                    ToastUtil.showLong("账号已存在");
-                }
             } else {
                 ToastUtil.showLong("输入的密码不一致");
             }
@@ -87,5 +81,10 @@ public class EnterpriseActivity extends BaseActivity<RegistredView, RegistredPer
     public void showRegister(RegisterBean registerBean) {
         Log.d(TAG, "showRegister: " + registerBean.toString());
         re = registerBean;
+        if (re.getMsg().equals("success")) {
+            IntentUtils.getInstence().intent(EnterpriseActivity.this, SuccessActivity.class);
+        } else {
+            ToastUtil.showLong("账号已存在");
+        }
     }
 }

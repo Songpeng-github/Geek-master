@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/red"
-    tools:context=".activity.JudicialActivity">
+    tools:context=".activity.AssetsActivity">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,35 +14,392 @@
         android:layout_marginLeft="@dimen/qb_px_15"
         android:layout_marginRight="@dimen/qb_px_15">
 
+
         <ImageView
             android:id="@+id/path"
             android:layout_width="@dimen/qb_px_10"
             android:layout_height="@dimen/qb_px_17"
             android:layout_centerVertical="true"
-            android:background="@mipmap/path"/>
+            android:background="@mipmap/path" />
+
+
         <TextView
-            android:text="司法拍卖"
             android:layout_width="@dimen/qb_px_94"
             android:layout_height="@dimen/qb_px_30"
-            android:textSize="@dimen/qb_px_20"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:text="司法拍卖"
+            android:textSize="@dimen/qb_px_20" />
     </RelativeLayout>
+
+
     <androidx.appcompat.widget.SearchView
-        app:queryHint="搜索你想要的拍品"
-        android:id="@+id/serachview"
+        android:id="@+id/assets_search"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_margin="10dp"
         android:background="@drawable/yuan"
-        app:iconifiedByDefault="false" />
+        app:iconifiedByDefault="false"
+        app:queryHint="搜索你想要的拍品" />
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/qb_px_60">
+        android:layout_height="@dimen/qb_px_160"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_0"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:background="@drawable/hui_ju">
+
+        <RelativeLayout
+            android:id="@+id/asset_relayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_80">
 
 
+            <LinearLayout
+                android:layout_width="@dimen/qb_px_65"
+                android:layout_height="@dimen/qb_px_70"
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_20"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/sifa" />
+
+                <TextView
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:paddingLeft="@dimen/qb_px_30"
+                    android:text="汽车" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ershou"
+                android:layout_width="@dimen/qb_px_65"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_marginLeft="@dimen/qb_px_70"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_es"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/shou" />
+
+                <TextView
+                    android:id="@+id/text_es"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="住宅用房" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/fangchan"
+                android:layout_width="@dimen/qb_px_65"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_marginLeft="@dimen/qb_px_140"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_fc"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_14"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/fangchan" />
+
+                <TextView
+                    android:id="@+id/text_fc"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="商业用房" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/qb_px_65"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_marginLeft="@dimen/qb_px_210"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/cat" />
+
+                <TextView
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="工业用房" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/qb_px_65"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_marginLeft="@dimen/qb_px_275"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/cat" />
+
+                <TextView
+                    android:id="@+id/text_cat"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_16"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="机械设备" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_80"
+            android:layout_below="@+id/asset_relayout">
+
+            <LinearLayout
+
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/zichan" />
+
+                <TextView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:gravity="center"
+                    android:text="股权" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_marginLeft="@dimen/qb_px_72"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/zhenpin" />
+
+                <TextView
+                    android:layout_width="@dimen/qb_px_40"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_20"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:gravity="center"
+                    android:text="资产" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_marginLeft="@dimen/qb_px_143"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/pai" />
+
+                <TextView
+                    android:id="@+id/text_pai"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_18"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:gravity="center"
+                    android:text="债权" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_marginLeft="@dimen/qb_px_212"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/quanbu" />
+
+                <TextView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:gravity="center"
+                    android:text="土地" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="@dimen/qb_px_70"
+                android:layout_height="@dimen/qb_px_70"
+                android:layout_marginLeft="@dimen/qb_px_275"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/quanbu" />
+
+                <TextView
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_16"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:gravity="center"
+                    android:text="全部" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_60"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_20"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:background="@drawable/juxing">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/qb_px_10"
+            android:orientation="horizontal">
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/judic_paixun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="默认排序"
+                    android:textSize="@dimen/qb_px_15" />
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_15"
+                    android:layout_height="@dimen/qb_px_10"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/judic_fenlei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/ic_launcher_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/qb_px_30"
+                    android:text="分类"
+                    android:textSize="@dimen/qb_px_15" />
+
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_15"
+                    android:layout_height="@dimen/qb_px_10"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/judic_di"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/ic_launcher_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/qb_px_30"
+                    android:text="所在地"
+                    android:textSize="@dimen/qb_px_15" />
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_15"
+                    android:layout_height="@dimen/qb_px_10"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/judic_zhuangtai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:src="@drawable/ic_launcher_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/qb_px_30"
+                    android:text="状态"
+                    android:textSize="@dimen/qb_px_15" />
+
+                <ImageView
+                    android:layout_width="@dimen/qb_px_15"
+                    android:layout_height="@dimen/qb_px_10"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/asset_re"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/qb_px_10" />
 
 
 </LinearLayout>

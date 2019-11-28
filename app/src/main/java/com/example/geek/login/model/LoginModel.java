@@ -3,6 +3,7 @@ package com.example.geek.login.model;
 
 import com.example.geek.base.BaseModel;
 import com.example.geek.login.bean.LoginBean;
+import com.example.geek.login.bean.QQBean;
 import com.example.geek.network.ApiService;
 import com.example.geek.network.BaseObserver;
 import com.example.geek.network.HttpUtils;
@@ -45,5 +46,22 @@ public class LoginModel  extends BaseModel {
                 });
     }
 
+//qq授权接口
+    public void QQ(final ResultCallBack callBack) {
+        ApiService apiserver = HttpUtils.getInstance().getApiserver(ApiService.sBaseUrl, ApiService.class);
+        Observable<QQBean> qq = apiserver.getQQ();
+        qq.compose(RxUtils.<QQBean>rxObserableSchedulerHelper())//切换线程
+                .subscribe(new BaseObserver<QQBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        compositeDisposable.add(d);
+                    }
+
+                    @Override
+                    public void onNext(QQBean bean) {
+                        callBack.onSuccess(bean);
+                    }
+                });
+    }
 
 }

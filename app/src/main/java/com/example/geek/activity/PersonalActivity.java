@@ -58,6 +58,11 @@ public class PersonalActivity extends BaseActivity<RegistredView, RegistredPeres
     @Override
     public void showRegister(RegisterBean registerBean) {
         rr = registerBean;
+        if (rr.getMsg().equals("success")) {
+            IntentUtils.getInstence().intent(this, SuccessActivity.class);
+        }else {
+            ToastUtil.showLong("账号已存在");
+        }
     }
 
 
@@ -72,16 +77,12 @@ public class PersonalActivity extends BaseActivity<RegistredView, RegistredPeres
         if (TextUtils.isEmpty(p_name.getText().toString()) || TextUtils.isEmpty(p_password.getText().toString()) || TextUtils.isEmpty(p_confir.getText().toString())) {
             ToastUtil.showLong("请填入详细的信息");
         } else {
-            if (p_name.getText().toString().equals(p_confir.getText().toString())) {
+            if (p_password.getText().toString().equals(p_confir.getText().toString())) {
                 mPresenter.Registre2(p_name.getText().toString(), p_password.getText().toString(), p_confir.getText().toString(), new Gson().toJson(new RegisterJson(phonetwo, p_password.getText().toString(), 1, p_name.getText().toString(), "", "", "", "", "")));
-                if (rr.getMsg().equals("success")) {
-                    IntentUtils.getInstence().intent(this, SuccessActivity.class);
-                }
             } else {
-                ToastUtil.showLong("请输入密码不一致");
+                ToastUtil.showLong("输入密码不一致");
             }
         }
-
 
     }
 

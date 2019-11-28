@@ -3,5 +3,5 @@
 
 
     <item android:drawable="@drawable/house_gray"  android:state_checked="true"/>
-    <item android:drawable="@drawable/house"/>
+    <item android:drawable="@drawable/shouye"/>
 </selector>

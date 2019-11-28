@@ -23,10 +23,10 @@ public class ForgetPeresenter extends BasePeresenter<ForgetView> implements Resu
 
     ForgetModel forgetModel= new ForgetModel();
     public void getForgetModel(String json,String phone) {
-
            forgetModel.forget(json,this);
 
        }
+
 
        public  void  getCheck(String json){
         forgetModel.CheckLMsgCode(json, new ResultCallBack() {

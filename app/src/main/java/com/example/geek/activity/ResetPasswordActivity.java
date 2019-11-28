@@ -36,7 +36,6 @@ public class ResetPasswordActivity extends BaseActivity<ResetView, ResetPeresent
     @BindView(R.id.confirmpassword)
     EditText confirm;
 
-
     @Override
     protected ResetPeresenter initPeresenter() {
         return new ResetPeresenter();
@@ -56,19 +55,16 @@ public class ResetPasswordActivity extends BaseActivity<ResetView, ResetPeresent
                     ToastUtil.showLong("密码不能为空");
                 } else {
                     if (password.getText().toString().equals(confirm.getText().toString())) {
-                        ToastUtil.showLong("密码不一致，请重新输入");
-                    } else {
                         mPresenter.Reset(password.getText().toString().trim(), confirm.getText().toString().trim(), new Gson().toJson(new ResetJson(password.getText().toString(), confirm.getText().toString())));
                         startActivity(new Intent(ResetPasswordActivity.this, ResetOKActivity.class));
+                    } else {
+                        ToastUtil.showLong("密码不一致，请重新输入");
                     }
                 }
-
                 break;
             case R.id.password:
-
                 break;
             case R.id.confirmpassword:
-
                 break;
         }
 

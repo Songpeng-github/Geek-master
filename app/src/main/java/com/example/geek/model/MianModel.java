@@ -73,7 +73,6 @@ public class MianModel extends BaseModel {
 
 //一级范围 测试接口
     public void firsttext(final ResultCallBack callBack) {
-
         ApiService apiserver = HttpUtils.getInstance().getApiserver(ApiService.sBaseUrl, ApiService.class);
 
         Observable<Beanone> banner = apiserver.getfirsttext();

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.example.geek.R;
 import com.example.geek.base.BaseActivity;
 import com.example.geek.login.bean.CheckBean;
+import com.example.geek.login.bean.CheckJson;
 import com.example.geek.login.bean.ForgetBean;
 import com.example.geek.login.bean.ForgetJson;
 import com.example.geek.login.peresenter.ForgetPeresenter;
@@ -72,7 +73,6 @@ public class ForgetpasswordActivity extends BaseActivity<ForgetView, ForgetPeres
             case R.id.btn_next:
                 if (forgetBean1.getMsg().equals("success")) {
                     IntentUtils.getInstence().intent(ForgetpasswordActivity.this, ResetPasswordActivity.class);
-
                 } else {
                     ToastUtil.showLong("验证码错误");
                 }
@@ -83,14 +83,12 @@ public class ForgetpasswordActivity extends BaseActivity<ForgetView, ForgetPeres
     @Override
     public void showForget(ForgetBean forgetBean) {
         Log.d(TAG, "showForget: " + forgetBean.toString());
-
         forgetBean1 = forgetBean;
         Log.d(TAG, forgetBean1.getMsg().toString());
-
     }
 
     @Override
     public void showCheck(CheckBean checkBean) {
-
+        mPresenter.getCheck(new Gson().toJson(new CheckJson(phone.getText().toString(),2+"",yzm.getText().toString())));
     }
 }

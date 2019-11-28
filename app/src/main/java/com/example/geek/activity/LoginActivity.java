@@ -12,10 +12,12 @@ import com.example.geek.MainActivity;
 import com.example.geek.R;
 import com.example.geek.base.BaseActivity;
 import com.example.geek.login.bean.LoginBean;
+import com.example.geek.login.bean.QQBean;
 import com.example.geek.login.bean.loginJson;
 import com.example.geek.login.peresenter.LoginPeresenter;
 import com.example.geek.login.view.LoginView;
 import com.example.geek.utils.IntentUtils;
+import com.example.geek.utils.Logger;
 import com.example.geek.utils.ToastUtil;
 import com.google.gson.Gson;
 
@@ -76,7 +78,7 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPeresenter> impl
 
                 break;
             case R.id.qq:
-
+                mPresenter.getQQ();
                 break;
             //   跳转 忘记密码界面
             case R.id.forget:
@@ -86,7 +88,6 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPeresenter> impl
         }
     }
 
-
     @Override
     public void showLoginbean(LoginBean msg) {
         if (msg.getCode() == 1) {
@@ -94,6 +95,12 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPeresenter> impl
         } else {
             ToastUtil.showLong("您输入的账号或密码有误");
         }
+
+    }
+
+    @Override
+    public void showQQ(QQBean bean) {
+        Logger.logD(TAG,"QQBean------------------------------"+bean);
 
     }
 }

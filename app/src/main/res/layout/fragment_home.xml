@@ -1,6 +1,284 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/jianbian"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_margin="@dimen/qb_px_15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/qb_px_140"
+            android:layout_width="@dimen/qb_px_75"
+            android:layout_height="@dimen/qb_px_25"
+            android:src="@mipmap/logo" />
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/qb_px_30"
+            android:id="@+id/fenxiang"
+            android:layout_width="@dimen/qb_px_20"
+            android:layout_height="@dimen/qb_px_18"
+            android:src="@mipmap/fenxiang" />
+
+        <ImageView
+            android:layout_alignParentRight="true"
+         android:layout_width="@dimen/qb_px_17"
+         android:layout_height="@dimen/qb_px_18"
+         android:src="@mipmap/sao" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:background="@drawable/yuan"
+        android:id="@+id/home_search"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        app:iconifiedByDefault="false"
+        app:queryHint="搜索你想要的拍品" />
+
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="@dimen/qb_px_345"
+        android:layout_height="@dimen/qb_px_150"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/qb_px_10" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_160"
+        android:layout_marginLeft="@dimen/qb_px_15"
+        android:layout_marginTop="@dimen/qb_px_0"
+        android:layout_marginRight="@dimen/qb_px_15"
+        android:background="@drawable/hui_ju">
+
+        <RelativeLayout
+            android:id="@+id/asset_relayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_80">
+
+
+            <LinearLayout
+                android:id="@+id/sf"
+                android:layout_width="@dimen/qb_px_80"
+                android:layout_height="@dimen/qb_px_80"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_sf"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_20"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/sifa" />
+
+                <TextView
+                    android:id="@+id/text_sf"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:paddingLeft="@dimen/qb_px_30"
+                    android:text="司法" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ershou"
+                android:layout_width="93dp"
+                android:layout_height="81dp"
+                android:layout_marginLeft="@dimen/qb_px_90"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_es"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/shou" />
+
+                <TextView
+                    android:id="@+id/text_es"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="二手闲置" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/fangchan"
+                android:layout_width="@dimen/qb_px_80"
+                android:layout_height="@dimen/qb_px_80"
+                android:layout_marginLeft="@dimen/qb_px_180"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_fc"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_14"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/fangchan" />
+
+                <TextView
+                    android:id="@+id/text_fc"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_20"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="房产" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cat"
+                android:layout_width="@dimen/qb_px_80"
+                android:layout_height="@dimen/qb_px_80"
+                android:layout_marginLeft="@dimen/qb_px_260"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_cat"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/cat" />
+
+                <TextView
+                    android:id="@+id/text_cat"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_16"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="汽车" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_80"
+            android:layout_below="@+id/asset_relayout">
+
+            <LinearLayout
+                android:id="@+id/zichan"
+                android:layout_width="@dimen/qb_px_80"
+                android:layout_height="@dimen/qb_px_80"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_zc"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_20"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/zichan" />
+
+                <TextView
+                    android:id="@+id/text_zc"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_30"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="资产" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/zhenpin"
+                android:layout_width="@dimen/qb_px_80"
+                android:layout_height="@dimen/qb_px_80"
+                android:layout_marginLeft="@dimen/qb_px_90"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_zp"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/zhenpin" />
+
+                <TextView
+                    android:id="@+id/text_zp"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="珍品" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/pai"
+                android:layout_width="@dimen/qb_px_80"
+                android:layout_height="@dimen/qb_px_80"
+                android:layout_marginLeft="@dimen/qb_px_180"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_pai"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/pai" />
+
+                <TextView
+                    android:id="@+id/text_pai"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="1元起拍" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/quanbu"
+                android:layout_width="@dimen/qb_px_80"
+                android:layout_height="@dimen/qb_px_80"
+                android:layout_marginLeft="@dimen/qb_px_260"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/im_qb"
+                    android:layout_width="@dimen/qb_px_45"
+                    android:layout_height="@dimen/qb_px_45"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:src="@mipmap/quanbu" />
+
+                <TextView
+                    android:id="@+id/text_qb"
+                    android:layout_width="@dimen/qb_px_60"
+                    android:layout_height="@dimen/qb_px_16"
+                    android:layout_marginLeft="@dimen/qb_px_15"
+                    android:layout_marginBottom="@dimen/qb_px_60"
+                    android:text="全部" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="@dimen/qb_px_355"
+        android:layout_height="@dimen/qb_px_14"
+        android:layout_margin="@dimen/qb_px_10"
+        android:src="@mipmap/que" />
+
+
+
+
 
 </LinearLayout>
